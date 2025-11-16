@@ -1,0 +1,4 @@
+if args.quick:
+    n_samples = 100
+else:
+    n_samples = 1000000
