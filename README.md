@@ -1,6 +1,30 @@
-# Primordial-Photon-Dark-Photon-Entanglement
-We report the first direct observational confirmation of primordial photon–dark-photon entanglement duality using the interstellar comet 3I/ATLAS (C/2025 N1) as a natural laboratory. 
+# Primordial Photon-Dark Photon Entanglement
 
+This repository contains the code and data accompanying the paper **"Primordial Photon-Dark Photon Entanglement"** by T. E. Ford. It provides a numerical framework for computing the time evolution of the density matrix for primordial photons mixing with dark photons in the early universe, quantifying the resulting quantum entanglement between the two sectors.
+
+## 📖 Overview
+
+The code solves the von Neumann equation for the density matrix of a coupled photon-dark photon system in an expanding universe. The key outputs are:
+- **Photon Survival Probability**: The probability that a photon remains a photon over time, showing characteristic oscillations damped by cosmological expansion.
+- **Entanglement Entropy**: The von Neumann entropy quantifying the quantum entanglement generated between the photon and dark photon fields.
+
+This work has implications for understanding the cosmological evolution of dark photons and their potential role as dark matter.
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.7+
+- NumPy
+- SciPy
+- Matplotlib
+
+### Installation & Execution
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/tlcagford/Primordial-Photon-Dark-Photon-Entanglement.git
+   cd Primordial-Photon-Dark-Photon-Entanglement
 Claim 1: "We model the cosmological evolution of the photon-dark photon system by solving the von Neumann equation for the system's density matrix."
 
     Verification Status: ✅ FULLY SUPPORTED
