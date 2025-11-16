@@ -1,0 +1,6 @@
+\subsection*{Interaction Lagrangian and coupling conventions}
+We adopt the following minimal interaction Lagrangian for a kinetically mixed dark photon $A'_\mu$ with the Standard Model photon $A_\mu$:
+\begin{equation}
+\mathcal{L} \;=\; -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} - \frac{1}{4} F'_{\mu\nu}F'^{\mu\nu} + \frac{1}{2} m_{A'}^2 A'_\mu A'^\mu - \frac{\varepsilon}{2} F_{\mu\nu}F'^{\mu\nu} + \mathcal{L}_{\rm SM}\,,
+\end{equation}
+where $F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu$ and analogous for $F'_{\mu\nu}$. We adopt SI units when reporting numerical estimates (explicit conversions are given in Appendix~\ref{app:units}).
