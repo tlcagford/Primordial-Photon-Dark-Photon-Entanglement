@@ -1,0 +1,10 @@
+\subsection*{From coupling to observable correlation}
+Starting from $\mathcal{L}$, the leading-order amplitude for a photon $A$ to oscillate into $A'$ scales as $\varepsilon$ (for $m_{A'} \ll \omega$), giving an effective conversion probability
+\begin{equation}
+P_{A\to A'} \approx \varepsilon^2 \, f(\omega, m_{A'}, \mathrm{medium}) ,
+\end{equation}
+where $f(\cdot)$ encapsulates refractive- and dispersion-dependent factors. The measurable polarization cross-correlation between two detectors A and B is then
+\begin{equation}
+C_{AB}(\Delta t) = \langle E_A(t) E_B(t+\Delta t)\rangle \propto \varepsilon^2 \, G(\Delta t;\,\omega,m_{A'},\mathrm{geometry}) + N(\Delta t),
+\end{equation}
+with $N$ the uncorrelated noise term. The full derivation and the explicit form of $G$ used for numerical calculations are given in Appendix~\ref{app:derivation}.
