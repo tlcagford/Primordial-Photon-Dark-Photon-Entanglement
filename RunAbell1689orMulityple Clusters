@@ -1,0 +1,3 @@
+python run_abell1689_all.py
+# or
+python run_multiple_clusters.py
