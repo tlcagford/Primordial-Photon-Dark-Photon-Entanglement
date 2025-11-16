@@ -1,0 +1,6 @@
+\subsection*{Decoherence timescales}
+Key requirement: entanglement produced at primordial times remains observable if the coherence time $\tau_{\rm coh}$ exceeds the timescale for interactions in the cometary coma $\tau_{\rm int}$. For scattering-dominated decoherence we estimate
+\[
+\tau_{\rm coh}^{-1} \sim n_{\rm coma}\sigma_{\rm scatt} c,
+\]
+with $n_{\rm coma}\sim 10^{6}\,\mathrm{m^{-3}}$ (typical coma number density — cite) and $\sigma_{\rm scatt}\sim 10^{-20}\,\mathrm{m^2}$, giving $\tau_{\rm coh}\sim 10^8~\mathrm{s}$ (order-of-magnitude). Compare with photon dwell times $\tau_{\rm dwell}\lesssim 10^3$–$10^5\,\mathrm{s}$; under these parameter choices, primordial correlations are not obviously destroyed.  These estimates are sensitive to $n_{\rm coma}$ and $\sigma_{\rm scatt}$; a parameter-sweep is shown in Fig.~X.
