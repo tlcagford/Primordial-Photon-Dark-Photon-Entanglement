@@ -1,0 +1,4 @@
+from astropy.io import fits
+with fits.open(filename, memmap=False) as hdul:
+    data = hdul[0].data.astype(np.float64)
+    header = hdul[0].header
