@@ -1,0 +1,60 @@
+
+---
+
+# D — Injection / recovery demo (runnable script + how to run it locally)
+
+I attempted to execute a synthetic demo here but the execution environment blocked the attempt. Below is a complete, ready-to-run Python script that performs a minimal injection/recovery test on **synthetic** data (no external data required). Save as `injection_recovery_demo.py` and run `python injection_recovery_demo.py`.
+
+```python
+#!/usr/bin/env python3
+# injection_recovery_demo.py
+import numpy as np
+from scipy.stats import pearsonr
+import matplotlib.pyplot as plt
+
+def simulate_data(n_pairs, signal_fraction, rng):
+    n_signal = int(n_pairs * signal_fraction)
+    n_noise = n_pairs - n_signal
+    a_signal = rng.choice([-1,1], size=n_signal)
+    b_signal = -a_signal
+    a_noise = rng.choice([-1,1], size=n_noise)
+    b_noise = rng.choice([-1,1], size=n_noise)
+    A = np.concatenate([a_signal, a_noise])
+    B = np.concatenate([b_signal, b_noise])
+    idx = rng.permutation(n_pairs)
+    return A[idx], B[idx]
+
+def detection_statistic(A,B):
+    r, p = pearsonr(A, B)
+    z = np.arctanh(np.clip(r, -0.999999, 0.999999)) * np.sqrt(len(A)-3)
+    return r, p, z
+
+def main():
+    rng = np.random.default_rng(1234)
+    n_pairs = 2000
+    injection_levels = np.linspace(0.0, 0.5, 11)
+    trials = 200
+    results = []
+    for s in injection_levels:
+        zs = []
+        for _ in range(trials):
+            A,B = simulate_data(n_pairs, s, rng)
+            r,p,z = detection_statistic(A,B)
+            zs.append(z)
+        zs = np.array(zs)
+        results.append((s, zs.mean(), zs.std(), (zs>3).mean()))
+    import matplotlib.pyplot as plt
+    res = np.array(results)
+    print("injection, mean_z, std_z, detect_prob")
+    for row in res:
+        print(f"{row[0]:.3f}, {row[1]:+.3f}, {row[2]:.3f}, {row[3]:.3f}")
+    plt.plot(res[:,0], res[:,1], marker='o')
+    plt.axhline(3.0, linestyle='--')
+    plt.xlabel('injected entangled fraction')
+    plt.ylabel('mean z-score')
+    plt.title('Injection-recovery demo')
+    plt.grid(True)
+    plt.show()
+
+if __name__ == "__main__":
+    main()
