@@ -1,0 +1,13 @@
+def parse_args():
+    p = argparse.ArgumentParser(description="Physics validation tests")
+    p.add_argument("--data-dir", type=str, default="data", help="directory with input data")
+    p.add_argument("--out-dir", type=str, default="output", help="where to write results/figures")
+    p.add_argument("--seed", type=int, default=RNG_SEED, help="random seed")
+    return p.parse_args()
+
+if __name__ == "__main__":
+    args = parse_args()
+    RNG_SEED = args.seed
+    rng = np.random.default_rng(RNG_SEED)
+    os.makedirs(args.out_dir, exist_ok=True)
+    logger.info("Starting tests with seed %d", RNG_SEED)
