@@ -1,0 +1,40 @@
+name: License Check & Badge
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types: [published]
+
+jobs:
+  license-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Verify LICENSE file exists
+      run: |
+        if [ ! -f LICENSE ]; then
+          echo "LICENSE file is missing!"
+          exit 1
+        else
+          echo "LICENSE file found."
+        fi
+
+    - name: Ensure README badge exists
+      run: |
+        BADGE="![License: Dual License](https://img.shields.io/badge/license-Dual--License-blue)"
+        if ! grep -q "$BADGE" README.md; then
+          echo "Adding license badge to README.md"
+          echo -e "\n$BADGE\n" >> README.md
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Add Dual-License badge to README [skip ci]" || echo "No changes to commit"
+          git push
+        else
+          echo "Badge already present in README.md"
+        fi
