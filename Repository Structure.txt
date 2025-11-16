@@ -1,8 +1,9 @@
-Primordial-Photon-Dark-Photon-Entanglement/
+.
 ├── src/                    # Source code
-├── tests/                  # Test suite
-├── data/                   # Data files
-├── figures/                # Generated figures
-├── papers/                 # Manuscripts and papers
-├── requirements.txt        # Python dependencies
-└── README.md              # This file
+│   ├── main.py            # Main orchestration script
+│   ├── physics.py         # Core physics implementation
+│   └── plotting.py        # Visualization functions
+├── data/                  # Generated data files
+├── figures/               # Output plots
+├── environment.yaml       # Conda environment setup
+└── requirements.txt       # Pip requirements
