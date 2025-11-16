@@ -1,0 +1,2 @@
+import subprocess
+subprocess.run(["wget", "-q", "-O", "file.fits", url], check=True)
