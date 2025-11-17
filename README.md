@@ -1,3 +1,6 @@
+
+![License: Dual License](https://img.shields.io/badge/license-Dual--License-blue)
+
 [updated_readme.md](https://github.com/user-attachments/files/23573346/updated_readme.md)
 # Primordial Photon–Dark Photon Entanglement
 
